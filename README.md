@@ -1,3 +1,14 @@
+# Navigate to your project directory
+cd /Users/ashleyjackson/Desktop/Bootcamp/Classwork/14-Full-Stack-React/02-Challenge
+
+# Stage all changes
+git add .
+
+# Commit the changes with a descriptive message
+git commit -m "Update README and other files with JWT authentication instructions"
+
+# Push the changes to your GitHub repository
+git push origin main
 A full-stack Kanban board application with user authentication using JWT, built with Node.js, Express, MongoDB, React, and TypeScript.
 
 🚀 Live Demo
