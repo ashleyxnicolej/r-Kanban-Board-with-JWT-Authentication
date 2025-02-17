@@ -59,7 +59,7 @@ export const updateTicket = async (req: Request, res: Response) => {
   const { id } = req.params;
   const { name, status, description, assignedUserId } = req.body;
   try {
-    const ticket = await Ticket.findByPk(id);
+    const ticket = await Ticket.findOne({ where: { id } });
     if (ticket) {
       ticket.name = name;
       ticket.status = status;

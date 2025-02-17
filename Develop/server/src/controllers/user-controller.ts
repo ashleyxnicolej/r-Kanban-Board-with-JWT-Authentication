@@ -1,12 +1,10 @@
 import { Request, Response } from 'express';
-import { User } from '../models/user.js';
+import { User } from '../models/user';
 
 // GET /Users
 export const getAllUsers = async (_req: Request, res: Response) => {
   try {
-    const users = await User.findAll({
-      attributes: { exclude: ['password'] }
-    });
+    const users = await User.findAllUsers();
     res.json(users);
   } catch (error: any) {
     res.status(500).json({ message: error.message });
