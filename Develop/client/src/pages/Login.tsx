@@ -21,7 +21,11 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await login(loginData);
-      Auth.login(data.token);
+      if (data && typeof data === 'object' && 'token' in data) {
+        Auth.login((data as { token: string }).token);
+      } else {
+        throw new Error('Invalid login response');
+      }
     } catch (err) {
       console.error('Failed to login', err);
     }
